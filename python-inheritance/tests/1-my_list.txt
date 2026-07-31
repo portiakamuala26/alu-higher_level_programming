@@ -1,0 +1,17 @@
+Test that MyList can be instantiated.
+
+Test that MyList inherits from list.
+
+Test the __str__ representation of MyList.
+
+Test append() by adding integers to the list.
+
+Test print_sorted() when the list is already sorted.
+
+Test print_sorted() when the list is not sorted.
+
+Test print_sorted() with negative numbers.
+
+Test print_sorted() with an empty list.
+
+Test that print_sorted() does not modify the original list and returns a new sorted list.
