@@ -7,75 +7,25 @@ with an integer_validator method.
 
 Numbers:
 ========
+''integer_validator()'' returns True if a num is integer.
+:: with positives integers
+   >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+   >>> bg = BaseGeometry()
 
->>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
->>> bg = BaseGeometry()
+:: with positive integer
+   >>> bg.integer_validator("my_int", 12)
 
-Test area()
+:: with negative integer
+   >>> bg.integer_validator("number", -12)
+   Traceback (most recent call last):
+   ValueError: number must be greater than 0
 
->>> bg.area()
-Traceback (most recent call last):
-Exception: area() is not implemented
+:: with 3 arguments
+   >>> bg.integer_validator("numbers", 0, 1)
+   Traceback (most recent call last):
+   TypeError: integer_validator() takes 3 positional arguments but 4 were given
 
-Test integer_validator()
-
->>> bg.integer_validator("my_int", 12)
-
-Test integer_validator("age")
-
->>> bg.integer_validator("age", 10)
-
-Test string value
-
->>> bg.integer_validator("name", "John")
-Traceback (most recent call last):
-TypeError: name must be an integer
-
-Test zero value
-
->>> bg.integer_validator("age", 0)
-Traceback (most recent call last):
-ValueError: age must be greater than 0
-
-Test negative value
-
->>> bg.integer_validator("distance", -4)
-Traceback (most recent call last):
-ValueError: distance must be greater than 0
-
-Test tuple value
-
->>> bg.integer_validator("age", (4,))
-Traceback (most recent call last):
-TypeError: age must be an integer
-
-Test list value
-
->>> bg.integer_validator("age", [3])
-Traceback (most recent call last):
-TypeError: age must be an integer
-
-Test boolean value
-
->>> bg.integer_validator("age", True)
-Traceback (most recent call last):
-TypeError: age must be an integer
-
-Test set value
-
->>> bg.integer_validator("age", {3, 4})
-Traceback (most recent call last):
-TypeError: age must be an integer
-
-Test None value
-
->>> bg.integer_validator("age", None)
-Traceback (most recent call last):
-TypeError: age must be an integer
-
-
-Test present checks:
-
-integer_validator()
-
-integer_validator("age")
+:: with infinite integer
+   >>> bg.integer_validator("infnumber", int('inf'))
+   Traceback (most recent call last):
+   ValueError: invalid literal for int() with base 10: 'inf'
