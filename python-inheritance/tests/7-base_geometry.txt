@@ -72,3 +72,10 @@ Test None value
 >>> bg.integer_validator("age", None)
 Traceback (most recent call last):
 TypeError: age must be an integer
+
+
+Test present checks:
+
+integer_validator()
+
+integer_validator("age")
