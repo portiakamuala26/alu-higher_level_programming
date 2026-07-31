@@ -1,3 +1,3 @@
 #!/bin/bash
-# sends GET request to given URL and displays body of response
-curl -s -f "$1"
+# Sends a GET request and displays body only for a 200 response
+curl -s -f "http://$1"
