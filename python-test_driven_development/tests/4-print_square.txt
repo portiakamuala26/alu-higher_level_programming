@@ -1,0 +1,49 @@
+============================
+doctest for 4-print_square.py
+============================
+
+``print_square()`` displays a # character square based on the provided size
+
+TEST CASES
+==========
+
+checking square output when size is an integer value
+::
+>>> print_square = __import__('4-print_square').print_square
+>>> print_square(2)
+##
+##
+
+checking function behavior when size is zero
+::
+>>> print_square(0)
+
+checking function behavior when size is not provided
+::
+>>> print_square()
+Traceback (most recent call last):
+TypeError: print_square() missing 1 required positional argument: 'size'
+
+checking function handling when size is None
+::
+>>> print_square(None)
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+checking function handling when size is a negative integer
+::
+>>> print_square(-4)
+Traceback (most recent call last):
+ValueError: size must be >= 0
+
+checking function handling when size is a float value
+::
+>>> print_square(3.14159)
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+checking function handling when size is a string value
+::
+>>> print_square("9")
+Traceback (most recent call last):
+TypeError: size must be an integer
