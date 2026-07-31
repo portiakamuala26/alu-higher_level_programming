@@ -1,17 +1,44 @@
-Test that MyList can be instantiated.
+MyList = __import__('1-my_list').MyList
 
-Test that MyList inherits from list.
+Create an empty MyList.
 
-Test the __str__ representation of MyList.
+    >>> my_list = MyList()
+    >>> print(my_list)
+    []
 
-Test append() by adding integers to the list.
+Check that MyList inherits from list.
 
-Test print_sorted() when the list is already sorted.
+    >>> isinstance(my_list, list)
+    True
 
-Test print_sorted() when the list is not sorted.
+Append values.
 
-Test print_sorted() with negative numbers.
+    >>> my_list.append(1)
+    >>> my_list.append(4)
+    >>> my_list.append(2)
+    >>> my_list.append(3)
+    >>> my_list.append(5)
+    >>> print(my_list)
+    [1, 4, 2, 3, 5]
 
-Test print_sorted() with an empty list.
+Print the sorted list.
 
-Test that print_sorted() does not modify the original list and returns a new sorted list.
+    >>> my_list.print_sorted()
+    [1, 2, 3, 4, 5]
+
+Verify the original list is unchanged.
+
+    >>> print(my_list)
+    [1, 4, 2, 3, 5]
+
+Test with negative numbers.
+
+    >>> my_list = MyList([-3, 7, 0, -1])
+    >>> my_list.print_sorted()
+    [-3, -1, 0, 7]
+
+Test an empty list.
+
+    >>> my_list = MyList()
+    >>> my_list.print_sorted()
+    []
