@@ -20,6 +20,11 @@ class Rectangle(Base):
         """Returns the area of the rectangle."""
         return self.__width * self.__height
 
+    def display(self):
+        """Prints the rectangle using # characters."""
+        for i in range(self.__height):
+            print("#" * self.__width)
+
     @property
     def width(self):
         """Gets the width."""
