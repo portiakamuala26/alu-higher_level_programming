@@ -40,3 +40,11 @@ class Base:
 
         with open(filename, "w") as file:
             file.write(cls.to_json_string(list_dictionaries))
+
+    @staticmethod
+    def from_json_string(json_string):
+        """Returns the list represented by a JSON string."""
+        if json_string is None or json_string == "":
+            return []
+
+        return json.loads(json_string)
